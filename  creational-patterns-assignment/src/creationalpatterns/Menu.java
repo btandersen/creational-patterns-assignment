@@ -17,7 +17,7 @@ public class Menu
         //
     }
     
-    public static Menu instance()
+    public static Menu getInstance()
     {
         if (Menu.instance == null)
         {
