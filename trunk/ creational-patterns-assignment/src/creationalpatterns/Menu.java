@@ -17,7 +17,7 @@ public class Menu
         //
     }
     
-    public static Menu getInstance()
+    public static synchronized Menu getInstance()
     {
         if (Menu.instance == null)
         {
