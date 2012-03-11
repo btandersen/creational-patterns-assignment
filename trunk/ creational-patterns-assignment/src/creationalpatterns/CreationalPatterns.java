@@ -33,20 +33,5 @@ public class CreationalPatterns
         }
 
         System.out.println("Menu1: " + menu1 + "\tMenu2: " + menu2);
-
-        menu1 = Menu.getInstance();
-
-        menu2 = new Menu();
-
-        if (menu1 == menu2)
-        {
-            System.out.println("They are the same objects!!!");
-        }
-        else
-        {
-            System.out.println("WTF!!!");
-        }
-
-        System.out.println("Menu1: " + menu1 + "\tMenu2: " + menu2);
     }
 }
