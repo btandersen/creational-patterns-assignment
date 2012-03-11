@@ -4,6 +4,10 @@
  */
 package creationalpatterns;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+
 /**
  *
  * @author Brandon
@@ -16,22 +20,19 @@ public class CreationalPatterns
      */
     public static void main(String[] args)
     {
-        // TODO code application logic here
-        System.out.println("Hello, world!!!");
-
-        Menu menu1 = Menu.getInstance();
-
-        Menu menu2 = Menu.getInstance();
-
-        if (menu1 == menu2)
+        String filename = "menu.txt";
+        Menu menu = Menu.getInstance();
+        MenuItemFactory menuItemFactory = MenuItemFactory.getInstance();
+        
+        try
         {
-            System.out.println("They are the same objects!!!");
+            Scanner sc = new Scanner(new FileInputStream(filename));
         }
-        else
+        catch (FileNotFoundException e)
         {
-            System.out.println("WTF!!!");
+            System.err.println(e.getMessage());
         }
         
-        System.out.println(menu1);
+        System.out.println(menu);
     }
 }
