@@ -4,6 +4,8 @@
  */
 package creationalpatterns;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author Brandon
@@ -14,10 +16,10 @@ public abstract class MenuItem
 
     protected String title;
     protected String category;
-    protected Meat meats[];
-    protected Vegetable vegetables[];
-    protected BakedGood bakedGoods[];
-    protected Topping toppings[];
+    protected ArrayList<Meat> meats;
+    protected ArrayList<Vegetable> vegetables;
+    protected ArrayList<BakedGood> bakedGoods;
+    protected ArrayList<Topping> toppings;
     
     public String getTitle()
     {

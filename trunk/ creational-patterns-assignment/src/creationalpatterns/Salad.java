@@ -8,8 +8,12 @@ package creationalpatterns;
  *
  * @author Brandon
  */
-public abstract class Salad extends MenuItem
+public class Salad extends MenuItem
 {
+    // Data members
+
+    private IngredientFactory ingredientFactory;
+
     public Salad()
     {
         this.category = "Salad";

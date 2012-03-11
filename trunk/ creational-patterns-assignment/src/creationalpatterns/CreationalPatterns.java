@@ -31,7 +31,7 @@ public class CreationalPatterns
         {
             System.out.println("WTF!!!");
         }
-
-        System.out.println("Menu1: " + menu1 + "\tMenu2: " + menu2);
+        
+        System.out.println(menu1);
     }
 }

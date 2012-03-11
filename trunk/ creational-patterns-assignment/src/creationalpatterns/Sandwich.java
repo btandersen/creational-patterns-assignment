@@ -10,6 +10,10 @@ package creationalpatterns;
  */
 public class Sandwich extends MenuItem
 {
+    // Data members
+
+    private IngredientFactory ingredientFactory;
+
     public Sandwich()
     {
         this.category = "Sandwich";
