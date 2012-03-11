@@ -4,6 +4,8 @@
  */
 package creationalpatterns;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author Brandon
@@ -12,10 +14,12 @@ public class Menu
 {
 
     private static Menu instance = null;
+    private ArrayList<MenuItem> menuItems;
 
     private Menu()
     {
         //
+        menuItems = new ArrayList<>();
     }
 
     public static synchronized Menu getInstance()
@@ -26,5 +30,18 @@ public class Menu
         }
 
         return Menu.instance;
+    }
+    
+    @Override
+    public String toString()
+    {
+        String str = "Menu:\n";
+        
+        for (int i = 0; i < this.menuItems.size(); i++)
+        {
+            str = str + this.menuItems.get(i) + "\n";
+        }
+        
+        return str;
     }
 }

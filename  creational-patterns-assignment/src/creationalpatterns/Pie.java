@@ -8,10 +8,15 @@ package creationalpatterns;
  *
  * @author Brandon
  */
-public abstract class Pie extends MenuItem
+public class Pie extends MenuItem
 {
-    public Pie()
+    // Data members
+    
+    private IngredientFactory ingredientFactory;
+    
+    public Pie(IngredientFactory ingredientFactory)
     {
         this.category = "Pie";
+        this.ingredientFactory = ingredientFactory;
     }
 }
