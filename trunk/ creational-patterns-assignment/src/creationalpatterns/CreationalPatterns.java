@@ -27,6 +27,13 @@ public class CreationalPatterns
         try
         {
             Scanner sc = new Scanner(new FileInputStream(filename));
+            
+            while (sc.hasNext())
+            {
+                String line = sc.nextLine();
+                
+                System.out.println(line);
+            }
         }
         catch (FileNotFoundException e)
         {
