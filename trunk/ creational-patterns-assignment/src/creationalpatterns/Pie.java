@@ -14,6 +14,6 @@ public class Pie extends MenuItem
     public Pie(IngredientFactory ingredientFactory)
     {
         this.category = "Pie";
-        this.ingredientFactory = new IngredientFactory();
+        this.ingredientFactory = ingredientFactory;
     }
 }

@@ -11,9 +11,9 @@ package creationalpatterns;
 public class Salad extends MenuItem
 {
 
-    public Salad()
+    public Salad(IngredientFactory ingredientFactory)
     {
         this.category = "Salad";
-        this.ingredientFactory = new IngredientFactory();
+        this.ingredientFactory = ingredientFactory;
     }
 }
