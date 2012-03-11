@@ -10,20 +10,21 @@ package creationalpatterns;
  */
 public class Menu
 {
+
     private static Menu instance = null;
-    
-    protected Menu()
+
+    private Menu()
     {
         //
     }
-    
+
     public static synchronized Menu getInstance()
     {
         if (Menu.instance == null)
         {
             Menu.instance = new Menu();
         }
-        
+
         return Menu.instance;
     }
 }
