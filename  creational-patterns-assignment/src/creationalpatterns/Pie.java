@@ -10,13 +10,10 @@ package creationalpatterns;
  */
 public class Pie extends MenuItem
 {
-    // Data members
-    
-    private IngredientFactory ingredientFactory;
-    
+
     public Pie(IngredientFactory ingredientFactory)
     {
         this.category = "Pie";
-        this.ingredientFactory = ingredientFactory;
+        this.ingredientFactory = new IngredientFactory();
     }
 }

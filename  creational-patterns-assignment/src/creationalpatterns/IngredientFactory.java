@@ -4,12 +4,52 @@
  */
 package creationalpatterns;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+
 /**
  *
  * @author Brandon
  */
 public class IngredientFactory
 {
+    //Data members
+    private String meats[] = {"Steak", "Kidney", "Ground Beef", "Pork Pie", "Ham", "Danish Back Bacon"};
+    private String vegetables[] = {"Onion", "Pickled Onion", "Carrots", "Peas", "Mashed Potatoes", "Mushroom", "Lettuce", "Branston Pickle", "Tomato", "Tomatoes"};
+    private String bakedGood[] = {"Flakey Pastry", "Bread"};
+    private String toppings[] = {"Gravy", "Cheese", "Cheddar Cheese", "Oil", "Vinegar", "English Mustard", "HP Sauce"};
+    private ArrayList<String> meatTypes;
+    private ArrayList<String> vegetableTypes;
+    private ArrayList<String> bakedGoodTypes;
+    private ArrayList<String> toppingTypes;
+    
+    public IngredientFactory()
+    {
+        this.meatTypes = new ArrayList<>(Arrays.asList(meats));
+        this.vegetableTypes = new ArrayList<>(Arrays.asList(vegetables));
+        this.bakedGoodTypes = new ArrayList<>(Arrays.asList(bakedGood));
+        this.toppingTypes = new ArrayList<>(Arrays.asList(toppings));
+    }
+    
+    public boolean isMeat(String str)
+    {
+        return this.meatTypes.contains((String)str);
+    }
+    
+    public boolean isVegetable(String str)
+    {
+        return this.vegetableTypes.contains((String)str);
+    }
+    
+    public boolean isBakedGood(String str)
+    {
+        return this.bakedGoodTypes.contains((String)str);
+    }
+    
+    public boolean isTopping(String str)
+    {
+        return this.toppingTypes.contains((String)str);
+    }
 
     public Meat createMeat(String type)
     {
