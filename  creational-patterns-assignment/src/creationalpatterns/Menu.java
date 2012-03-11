@@ -32,6 +32,11 @@ public class Menu
         return Menu.instance;
     }
     
+    public void addMenuItem(MenuItem item)
+    {
+        this.menuItems.add(item);
+    }
+    
     @Override
     public String toString()
     {
