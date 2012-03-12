@@ -21,6 +21,16 @@ public abstract class MenuItem
     protected ArrayList<BakedGood> bakedGoods;
     protected ArrayList<Topping> toppings;
     protected IngredientFactory ingredientFactory;
+    
+    public MenuItem()
+    {
+        this.meats = new ArrayList<>();
+        this.vegetables = new ArrayList<>();
+        this.bakedGoods = new ArrayList<>();
+        this.toppings = new ArrayList<>();
+        
+        this.ingredientFactory = IngredientFactory.getInstance();
+    }
 
     public String getTitle()
     {
