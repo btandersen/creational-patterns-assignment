@@ -26,13 +26,28 @@ public class CreationalPatterns
         
         try
         {
-            Scanner sc = new Scanner(new FileInputStream(filename));
+            Scanner lineScanner = new Scanner(new FileInputStream(filename));
             
-            while (sc.hasNext())
+            while (lineScanner.hasNext())
             {
-                String line = sc.nextLine();
+                String line = lineScanner.nextLine();
                 
-                System.out.println(line);
+                String elements[] = line.split(":");
+                
+                String title = elements[0].trim();
+                String category = elements[1].trim();
+                String ingredients[] = elements[2].trim().split(",");
+                
+                MenuItem item = menuItemFactory.createMenuItem(category);
+                
+                item.setTitle(title);
+                
+                for (int i = 0; i < ingredients.length; i++)
+                {
+                    item.addIngredient(ingredients[i].trim());
+                }
+                
+                menu.addMenuItem(item);
             }
         }
         catch (FileNotFoundException e)
