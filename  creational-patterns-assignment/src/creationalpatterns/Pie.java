@@ -1,6 +1,10 @@
 /*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
+ * Brandon T. Andersen
+ * 1000878186
+ * Online Graduate Student
+ * CSE 460/598 Spring 2012
+ * 
+ * Creational Patterns Assignment
  */
 package creationalpatterns;
 
