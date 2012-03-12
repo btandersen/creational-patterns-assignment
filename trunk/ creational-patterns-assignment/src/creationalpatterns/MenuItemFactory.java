@@ -30,16 +30,21 @@ public class MenuItemFactory
 
     public MenuItem createMenuItem(String type)
     {
-        switch (type)
+        if (type.equals("Pie"))
         {
-            case "Pie":
-                return new Pie(IngredientFactory.getInstance());
-            case "Salad":
-                return new Salad(IngredientFactory.getInstance());
-            case "Sandwich":
-                return new Sandwich(IngredientFactory.getInstance());
-            default:
-                return null;
+            return new Pie(IngredientFactory.getInstance());
+        }
+        else if (type.equals("Salad"))
+        {
+            return new Salad(IngredientFactory.getInstance());
+        }
+        else if (type.equals("Sandwich"))
+        {
+            return new Sandwich(IngredientFactory.getInstance());
+        }
+        else
+        {
+            return null;
         }
     }
 }

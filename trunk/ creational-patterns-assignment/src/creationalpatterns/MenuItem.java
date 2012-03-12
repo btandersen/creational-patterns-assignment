@@ -79,7 +79,7 @@ public abstract class MenuItem
 
         if (!this.meats.isEmpty())
         {
-            str = str + this.meats.toString();
+            str = str + this.meats.toString().substring(1, this.meats.toString().length() - 1);
         }
         else
         {
@@ -92,7 +92,7 @@ public abstract class MenuItem
 
         if (!this.vegetables.isEmpty())
         {
-            str = str + this.vegetables.toString();
+            str = str + this.vegetables.toString().substring(1, this.vegetables.toString().length() - 1);
         }
         else
         {
@@ -105,7 +105,7 @@ public abstract class MenuItem
 
         if (!this.bakedGoods.isEmpty())
         {
-            str = str + this.bakedGoods.toString();
+            str = str + this.bakedGoods.toString().substring(1, this.bakedGoods.toString().length() - 1);
         }
         else
         {
@@ -118,7 +118,7 @@ public abstract class MenuItem
 
         if (!this.toppings.isEmpty())
         {
-            str = str + this.toppings.toString();
+            str = str + this.toppings.toString().substring(1, this.toppings.toString().length() - 1);
         }
         else
         {
