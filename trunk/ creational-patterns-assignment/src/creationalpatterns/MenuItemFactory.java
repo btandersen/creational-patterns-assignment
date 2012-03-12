@@ -17,11 +17,15 @@ public class MenuItemFactory
 
     private static MenuItemFactory instance = null;
 
+    // contructor, private since this class is treated as a Singleton
+    // cannot be called outside class
     private MenuItemFactory()
     {
-        //
+        // nothing to initialize
     }
 
+    // getInstance method either creates an instance if not already done
+    // or returns the instance created previously
     public static synchronized MenuItemFactory getInstance()
     {
         if (MenuItemFactory.instance == null)
@@ -32,6 +36,8 @@ public class MenuItemFactory
         return MenuItemFactory.instance;
     }
 
+    // factory method to create a MenuItem, returns a concrete type depending on the
+    // type requested
     public MenuItem createMenuItem(String type)
     {
         if (type.equals("Pie"))

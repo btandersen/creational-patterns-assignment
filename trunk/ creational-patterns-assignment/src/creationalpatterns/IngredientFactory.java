@@ -19,6 +19,8 @@ public class IngredientFactory
 {
     //Data members
 
+    // types of ingredients available from this factory
+    // as ingredients are needed, they can be added here
     private String meats[] =
     {
         "Steak", "Kidney", "Ground Beef", "Pork Pie", "Ham", "Danish Back Bacon"
@@ -41,6 +43,8 @@ public class IngredientFactory
     private ArrayList<String> toppingTypes;
     private static IngredientFactory instance = null;
 
+    // contructor, private since this class is treated as a Singleton
+    // cannot be called outside class
     private IngredientFactory()
     {
         this.meatTypes = new ArrayList<>(Arrays.asList(meats));
@@ -49,6 +53,8 @@ public class IngredientFactory
         this.toppingTypes = new ArrayList<>(Arrays.asList(toppings));
     }
 
+    // getInstance method either creates an instance if not already done
+    // or returns the instance created previously
     public static synchronized IngredientFactory getInstance()
     {
         if (IngredientFactory.instance == null)
@@ -59,6 +65,8 @@ public class IngredientFactory
         return IngredientFactory.instance;
     }
 
+    // the isXXXX() methods below check is the requested item is available
+    // and if it belongs to a certain category
     public boolean isMeat(String str)
     {
         return this.meatTypes.contains((String) str);
@@ -79,6 +87,8 @@ public class IngredientFactory
         return this.toppingTypes.contains((String) str);
     }
 
+    // factory method to create a Meat, returns a concrete type depending on the
+    // type requested
     public Meat createMeat(String type)
     {
         if (type.equals("Steak"))
@@ -111,6 +121,8 @@ public class IngredientFactory
         }
     }
 
+    // factory method to create a Vegetable, returns a concrete type depending on the
+    // type requested
     public Vegetable createVegetable(String type)
     {
         if (type.equals("Onion"))
@@ -155,6 +167,8 @@ public class IngredientFactory
         }
     }
 
+    // factory method to create a BakedGood, returns a concrete type depending on the
+    // type requested
     public BakedGood createBakedGood(String type)
     {
         if (type.equals("Flakey Pastry"))
@@ -171,6 +185,8 @@ public class IngredientFactory
         }
     }
 
+    // factory method to create a Topping, returns a concrete type depending on the
+    // type requested
     public Topping createTopping(String type)
     {
         if (type.equals("Gravy"))

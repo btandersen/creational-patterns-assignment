@@ -26,28 +26,31 @@ public abstract class MenuItem
     protected ArrayList<Topping> toppings;
     protected IngredientFactory ingredientFactory;
     
+    // constructor to initialize ingredient lists
     public MenuItem()
     {
         this.meats = new ArrayList<>();
         this.vegetables = new ArrayList<>();
         this.bakedGoods = new ArrayList<>();
         this.toppings = new ArrayList<>();
-        
-        this.ingredientFactory = IngredientFactory.getInstance();
     }
 
+    // get the title of the menu item
     public String getTitle()
     {
         return this.title;
     }
 
+    // set the title of the menu item
     public void setTitle(String title)
     {
         this.title = title;
     }
 
+    // add an ingredient based on the type passed
     public void addIngredient(String str)
     {
+        // check for the type of ingredient and see if the factory has it
         if (this.ingredientFactory.isMeat(str))
         {
             this.meats.add(this.ingredientFactory.createMeat(str));
@@ -64,6 +67,7 @@ public abstract class MenuItem
         {
             this.toppings.add(this.ingredientFactory.createTopping(str));
         }
+        // if not, let somebody know...
         else
         {
             System.out.println("The Ingredient Factory does not have any: " + str + "\n");
@@ -71,6 +75,8 @@ public abstract class MenuItem
     }
 
     @Override
+    // string representation of a menu item, checks to see if the ingredient lists
+    // have any ingredients in them builds a string to return
     public String toString()
     {
         String str = "";
