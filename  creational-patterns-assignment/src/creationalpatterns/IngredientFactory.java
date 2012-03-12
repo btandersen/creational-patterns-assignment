@@ -77,86 +77,129 @@ public class IngredientFactory
 
     public Meat createMeat(String type)
     {
-        switch (type)
+        if (type.equals("Steak"))
         {
-            case "Steak":
-                return new Steak();
-            case "Kidney":
-                return new Kidney();
-            case "Ground Beef":
-                return new GroundBeef();
-            case "Pork Pie":
-                return new PorkPie();
-            case "Ham":
-                return new Ham();
-            case "Danish Back Bacon":
-                return new DanishBackBacon();
-            default:
-                return null;
+            return new Steak();
+        }
+        else if (type.equals("Kidney"))
+        {
+            return new Kidney();
+        }
+        else if (type.equals("Ground Beef"))
+        {
+            return new GroundBeef();
+        }
+        else if (type.equals("Pork Pie"))
+        {
+            return new PorkPie();
+        }
+        else if (type.equals("Ham"))
+        {
+            return new Ham();
+        }
+        else if (type.equals("Danish Back Bacon"))
+        {
+            return new DanishBackBacon();
+        }
+        else
+        {
+            return null;
         }
     }
 
     public Vegetable createVegetable(String type)
     {
-        switch (type)
+        if (type.equals("Onion"))
         {
-            case "Onion":
-                return new Onion();
-            case "Pickled Onion":
-                return new PickledOnion();
-            case "Carrots":
-                return new Carrots();
-            case "Peas":
-                return new Peas();
-            case "Mashed Potatoes":
-                return new MashedPotatoes();
-            case "Mushroom":
-                return new Mushroom();
-            case "Lettuce":
-                return new Lettuce();
-            case "Branston Pickle":
-                return new BranstonPickle();
-            case "Tomato":
-            case "Tomatoes":
-                return new Tomato();
-            default:
-                return null;
+            return new Onion();
+        }
+        else if (type.equals("Pickled Onion"))
+        {
+            return new PickledOnion();
+        }
+        else if (type.equals("Carrots"))
+        {
+            return new Carrots();
+        }
+        else if (type.equals("Peas"))
+        {
+            return new Peas();
+        }
+        else if (type.equals("Mashed Potatoes"))
+        {
+            return new MashedPotatoes();
+        }
+        else if (type.equals("Mushroom"))
+        {
+            return new Mushroom();
+        }
+        else if (type.equals("Lettuce"))
+        {
+            return new Lettuce();
+        }
+        else if (type.equals("Branston Pickle"))
+        {
+            return new BranstonPickle();
+        }
+        else if (type.equals("Tomato") || type.equals("Tomatoes"))
+        {
+            return new Tomato();
+        }
+        else
+        {
+            return null;
         }
     }
 
     public BakedGood createBakedGood(String type)
     {
-        switch (type)
+        if (type.equals("Flakey Pastry"))
         {
-            case "Flakey Pastry":
-                return new FlakeyPastry();
-            case "Bread":
-                return new Bread();
-            default:
-                return null;
+            return new FlakeyPastry();
+        }
+        else if (type.equals("Bread"))
+        {
+            return new Bread();
+        }
+        else
+        {
+            return null;
         }
     }
 
     public Topping createTopping(String type)
     {
-        switch (type)
+        if (type.equals("Gravy"))
         {
-            case "Gravy":
-                return new Gravy();
-            case "Cheese":
-                return new Cheese();
-            case "Cheddar Cheese":
-                return new CheddarCheese();
-            case "Oil":
-                return new Oil();
-            case "Vinegar":
-                return new Vinegar();
-            case "English Mustard":
-                return new EnglishMustard();
-            case "HP Sauce":
-                return new HPSauce();
-            default:
-                return null;
+            return new Gravy();
+        }
+        else if (type.equals("Cheese"))
+        {
+            return new Cheese();
+        }
+        else if (type.equals("Cheddar Cheese"))
+        {
+            return new CheddarCheese();
+        }
+        else if (type.equals("Oil"))
+        {
+            return new Oil();
+        }
+        else if (type.equals("Vinegar"))
+        {
+            return new Vinegar();
+        }
+        else if (type.equals("English Mustard"))
+        {
+            return new EnglishMustard();
+        }
+        else if (type.equals("HP Sauce"))
+        {
+            return new HPSauce();
+        }
+        else
+        {
+            return null;
         }
     }
 }
