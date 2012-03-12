@@ -24,33 +24,43 @@ public class CreationalPatterns
      */
     public static void main(String[] args)
     {
-        String filename = "menu.txt";
-        Menu menu = Menu.getInstance();
-        MenuItemFactory menuItemFactory = MenuItemFactory.getInstance();
+        String filename = "menu.txt"; // name of the menu input file
+        Menu menu = Menu.getInstance(); // get the instance of the Menu class (a Singleton)
+        MenuItemFactory menuItemFactory = MenuItemFactory.getInstance(); // get the instance of the MenuItemFactory class (a Singleton)
         
+        // try-catch block for file IO exceptions
         try
         {
+            // open up the input file and read it with a scanner
             Scanner lineScanner = new Scanner(new FileInputStream(filename));
             
+            // step through the file, line by line
             while (lineScanner.hasNext())
             {
+                // get the current line
                 String line = lineScanner.nextLine();
                 
+                // split the elements
                 String elements[] = line.split(":");
                 
+                // first is title, second is category, third is ingredient list
                 String title = elements[0].trim();
                 String category = elements[1].trim();
                 String ingredients[] = elements[2].trim().split(",");
                 
+                // create a new menu item depending on the category
                 MenuItem item = menuItemFactory.createMenuItem(category);
                 
+                // set the item's title
                 item.setTitle(title);
                 
+                // add the ingredients
                 for (int i = 0; i < ingredients.length; i++)
                 {
                     item.addIngredient(ingredients[i].trim());
                 }
                 
+                // add the item to the menu
                 menu.addMenuItem(item);
             }
         }
@@ -59,6 +69,7 @@ public class CreationalPatterns
             System.err.println(e.getMessage());
         }
         
+        // print the menu to the standard output
         System.out.println(menu);
     }
 }
